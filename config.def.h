@@ -9,13 +9,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad	    = 8;	/* vertical padding of bar */
 static const int sidepad	    = 8;	/* horizontal padding of bar */
-static const char *fonts[]          = { "Noto Sans:style=Regular:size=12", "Noto Mono Nerd Font Complete:style=Regular:size=16" };
-static const char dmenufont[]       = "Noto Sans:style=Regular:size=14";
+static const char *fonts[]          = { "Noto Sans:style=bold:size=12", "NotoSans NF:style=Regular:size=12" };
+static const char dmenufont[]       = "Noto Sans:style=Regular:size=13";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_orange[]      = "#ff8000";
+static const char col_orange[]      = "#ff8800";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -24,18 +24,18 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { ">", "", "", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class	instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",    	NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Firefox", 	NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "Alacritty",	NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      	NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */

@@ -1944,9 +1944,9 @@ updatebarpos(Monitor *m)
 	if (m->showbar) {
 		m->wh = m->wh - vertpad - bh;
 		m->by = m->topbar ? m->wy : m->wy + m->wh + vertpad;
-		m->wy = m->topbar ? m->wy + bh + vp : m->wy;
+		m->wy = m->topbar ? m->wy + bh + vertpad : m->wy;
 	} else
-		m->by = -bh - vp;
+		m->by = -bh - vertpad;
 }
 
 void

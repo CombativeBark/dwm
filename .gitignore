@@ -37,3 +37,4 @@ dwm
 machine.h
 pkg/*
 *.pkg.tar.xz
+patches/*

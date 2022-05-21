@@ -11,20 +11,24 @@ static const int vertpad			= 12;	/* vertical padding of bar */
 static const int sidepad			= 12;	/* horizontal padding of bar */
 static const char *fonts[]          = { "Noto Sans:style=bold:size=10", "NotoSans Nerd Font:style=Regular:size=10" };
 static const char dmenufont[]       = "Noto Sans:style=Regular:size=11";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_orange[]      = "#ff8800";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_orange, col_orange },
+static const char col_nor_bg[]      = "#222222";
+static const char col_nor_border[]	= "#444444";
+static const char col_nor_fg[]		= "#bbbbbb";
+static const char col_sel_fg[]		= "#eeeeee";
+static const char col_sel_border[]	= "#ff8800";
+static const char *colors[][3]		= {
+	/*               fg				bg				border   */
+	[SchemeNorm] = { col_nor_fg,	col_nor_bg,		col_nor_border },
+	[SchemeSel]  = { col_sel_fg,	col_sel_border,	col_sel_border },
 };
 
 /* tagging */
 static const char *tags[] = { "", "", "", "4", "5", "6", "7", "8", "9" };
+
+static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
+static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -67,7 +71,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_orange, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nor_bg, "-nf", col_nor_fg, "-sb", col_sel_border, "-sf", col_sel_fg, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *lewdcmd[]  = { "/home/bark/dev/scripts/lewd", NULL };
 static const char *shutdowncmd[] = { "/home/bark/dev/scripts/prompt", "Shutdown?", "shutdown now", NULL };

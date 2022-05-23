@@ -10,7 +10,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad			= 12;		/* vertical padding of bar */
 static const int sidepad			= 12;		/* horizontal padding of bar */
 static const int startontag			= 1;		/* 0 means no tag active on start */
-static const char *fonts[]          = { "Noto Sans:style=bold:size=10", "NotoSans Nerd Font:style=Regular:size=10" };
+static const char *fonts[]          = { "Noto Sans CJK JP Bold:style=Regular:size=10", "Noto Sans Nerd Font:style=Regular:size=11", "Font Awesome 6 Brands:style=Regular:size=10" };
 static const char dmenufont[]       = "Noto Sans:style=Regular:size=11";
 static const char col_nor_bg[]      = "#222222";
 static const char col_nor_border[]	= "#444444";
@@ -24,9 +24,10 @@ static const char *colors[][3]		= {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+// static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinepad	= 4;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
@@ -39,6 +40,8 @@ static const Rule rules[] = {
 	/* class	instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    	NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "firefox", 	NULL,     NULL,           1 << 2,    0,          0,          -1,        -1 },
+	{ "Steam",	 	NULL,     NULL,           1 << 3,    0,          0,          -1,		 0 },
+	{ "discord",	NULL,	  NULL,			  1 << 7,	 0,			 0,			 -1,		 1 },
 	{ "Spotify", 	NULL,     NULL,           1 << 8,    0,          0,          -1,		 1 },
 	{ "Alacritty",	NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      	NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
